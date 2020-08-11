@@ -1,15 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import "./base.css";
+import Popular from "./components/Popular";
 
 class App extends React.Component {
   render() {
     return (
-      <React.Fragment>
-        <h1>{this.props.name}</h1>
-        <p>hello react</p>
-      </React.Fragment>
+      <div className="container">
+        <Popular />
+      </div>
     );
   }
 }
 
-ReactDOM.render(<App name="garyzgong" />, document.getElementById("app"));
+ReactDOM.render(<App />, document.getElementById("app"));

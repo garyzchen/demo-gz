@@ -5,9 +5,13 @@ const port = 3000;
 
 app.use(express.static(path.join(__dirname, "public")));
 
-// app.get("/", (req, res) => {
-//   res.redirect("/base/index.html");
-// });
+app.get("/", (req, res) => {
+  res.redirect("/base/index.html");
+});
+
+app.get("/api", (req, res) => {
+  res.json({ name: "garyz" });
+});
 
 app.use(function (req, res) {
   res.send("404: Page not Found");

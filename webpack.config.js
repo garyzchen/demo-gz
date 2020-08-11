@@ -13,6 +13,10 @@ module.exports = {
       { test: /\.css$/, use: ["style-loader", "css-loader"] },
     ],
   },
-  plugins: [new HtmlWebpackPlugin({ template: "./site/base.html" })],
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./site/base.html",
+    }),
+  ],
   mode: process.env.NODE_ENV === "production" ? "production" : "development",
 };

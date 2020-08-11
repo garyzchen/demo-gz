@@ -1,0 +1,70 @@
+Hello Git and GitHub
+git note
+$ git config --global user.name "John Doe"
+$ git config --global user.email johndoe@example.com
+
+$ git config --global core.editor "subl -w"
+$ git config --global core.autocrlf false
+
+git init 
+
+$ git add *.c
+$ git add LICENSE
+$ git commit -m 'initial project version'
+
+$ git status
+
+$ rm PROJECTS.md
+$ git rm PROJECTS.md
+
+$ git rm --cached README
+
+$ git mv README.md README
+
+$ git log
+
+$ git commit -m 'initial commit'
+$ git add forgotten_file
+$ git commit --amend
+
+use "git restore <file>..." to discard changes in working directory
+
+$ git remote -v
+
+$ git remote add pb https://github.com/paulboone/ticgit
+
+$ git fetch pb
+
+$ git push origin master
+
+$ git remote show origin
+
+$ git config --global alias.co checkout
+$ git config --global alias.br branch
+$ git config --global alias.ci commit
+$ git config --global alias.st status
+
+$ git branch testing
+
+$ git checkout testing
+
+$ git checkout -b iss53
+Switched to a new branch "iss53"
+$ vim index.html
+$ git commit -a -m 'added a new footer [issue 53]'
+$ git checkout master
+Switched to branch 'master'
+$ git checkout -b hotfix
+Switched to a new branch 'hotfix'
+$ vim index.html
+$ git commit -a -m 'fixed the broken email address'
+[hotfix 1fb7853] fixed the broken email address
+ 1 file changed, 2 insertions(+)
+ $ git checkout master
+$ git merge hotfix
+Updating f42c576..3a0874c
+Fast-forward
+ index.html | 2 ++
+ 1 file changed, 2 insertions(+)
+ $ git branch -d hotfix
+Deleted branch hotfix (3a0874c).

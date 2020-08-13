@@ -1,6 +1,9 @@
 const path = require("path");
 const express = require("express");
 const app = express();
+
+const { data } = require("./draft");
+
 const port = 3000;
 
 app.use(express.static(path.join(__dirname, "public")));
@@ -10,7 +13,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/api", (req, res) => {
-  res.json({ name: "garyz" });
+  res.json(data);
 });
 
 app.use(function (req, res) {

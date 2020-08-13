@@ -13,3 +13,17 @@ export function fetchPopularRepos(language) {
       return data.items;
     });
 }
+
+export function fetchData(language) {
+  const endpoint = window.encodeURI(`http://localhost:3000/api`);
+
+  return fetch(endpoint)
+    .then((res) => res.json())
+    .then((data) => {
+      if (language === "All") {
+        return data;
+      } else {
+        return data.filter((d) => d["language"] === language);
+      }
+    });
+}
